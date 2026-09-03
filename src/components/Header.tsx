@@ -1,14 +1,15 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { MobileNav } from "./MobileNav";
 
 const links = [
   { href: "#screens", label: "Screens" },
   { href: "#how-it-works", label: "How it works" },
-  { href: "#specs", label: "Specs" },
+  { href: "#product", label: "Product" },
 ];
 
 export function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const menuButtonRef = useRef<HTMLButtonElement>(null);
 
   return (
     <header
@@ -51,6 +52,7 @@ export function Header() {
         </div>
 
         <button
+          ref={menuButtonRef}
           className="flex items-center gap-1.5 sm:hidden"
           onClick={() => setMenuOpen(true)}
           aria-label="Open menu"
@@ -66,6 +68,7 @@ export function Header() {
         open={menuOpen}
         onClose={() => setMenuOpen(false)}
         links={[...links, { href: "#waitlist", label: "Get updates" }]}
+        triggerRef={menuButtonRef}
       />
     </header>
   );

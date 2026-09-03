@@ -1,15 +1,15 @@
 const values = [
   {
-    label: "Paper-like clarity",
-    body: "E-ink holds its image without a backlight, so it reads like a printed page even in daylight.",
+    label: "Always visible",
+    body: "Keep the information that matters in view, without opening another app or tab to check it.",
   },
   {
-    label: "Zero distractions",
-    body: "No notifications, no feed, no app icons. It shows the one thing you set it to show.",
+    label: "One glance, less checking",
+    body: "Laid out around the information you need to see quickly during the workday, not to browse.",
   },
   {
-    label: "Up to 30 days a charge",
-    body: "The screen only draws power when it changes — a full month before it needs a cable again.",
+    label: "Up to 30 days on a charge",
+    body: "Low-power operation is designed to keep the display running for long periods with minimal charging attention.",
   },
 ];
 

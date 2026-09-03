@@ -1,106 +1,68 @@
-# Attend — Async Labs frontend screening (T5)
+# Attend — Async Labs Frontend Screening
 
 **Name:** [Your Name]
-**Task:** T5 — Website Frontend Development
 
 ## What I built
 
-A marketing site for **Attend**, a product concept built around the
-7.5-inch Async Labs display: an always-on screen for developers and
-knowledge workers that shows one thing worth a glance — a focus timer, a
-build status, a meeting, a day's tasks — instead of a feed. I picked this
-angle deliberately and built the whole site around it rather than covering
-every example use case from the brief.
+A marketing site for Attend, a 7.5-inch workspace display concept built
+around a single idea: keep the information you check repeatedly — a focus
+session, a meeting, a task list — visible at a glance, on its own surface,
+instead of buried in another app or tab.
 
-The centerpiece is an interactive device mockup, built in CSS/SVG from the
-physical product reference (not a static image), that:
+## Concept
 
-- **Switches between four screen templates** (Focus timer, Dev dashboard,
-  Meeting status, Calendar & tasks) via accessible, keyboard-navigable tabs.
-- **Switches between the mono and tri-color hardware variants** live, so
-  every highlight on screen only uses colors that variant's e-ink panel can
-  actually produce.
-- **Runs a real countdown timer** in the hero, so the display reads as
-  "alive" the way the physical product would.
+The site is built for one persona: developers and knowledge workers doing
+focused, heads-down work. Every section supports that angle rather than
+listing every possible use of the hardware — an interactive device mockup
+is the centerpiece, showing four real layouts (focus timer, dev dashboard,
+meeting status, calendar & tasks) switching live on the same physical
+frame, in either the black & white or tri-color variant.
 
-Everything else on the site — value strip, how-it-works, spec sheet with the
-real product photo, and a validated waitlist form — is built to support that
-one idea rather than pad the page out.
+## Features
 
-## Stack
+- Responsive marketing site (320px through desktop)
+- Interactive display templates (accessible tabs, keyboard-navigable)
+- Black & white / tri-color display variant toggle
+- Functional focus countdown timer
+- Responsive mobile navigation with focus trap and return-to-trigger
+- Accessible keyboard interactions throughout, 0 axe-core violations
 
-React 19 + TypeScript + Vite + Tailwind CSS v4. No UI kit — every component
-is hand-built. Fonts: Space Grotesk (display), Inter (body), IBM Plex Mono
-(data/labels on the device screens).
+## Tech
 
-## Running it locally
+React, TypeScript, Vite, Tailwind CSS
 
-```bash
+## Run locally
+
+```
 npm install
-npm run dev       # http://localhost:5173
+npm run dev
 ```
 
-Other scripts: `npm run build` (typecheck + production build to `dist/`),
-`npm run preview` (serve the production build), `npm run lint` (oxlint).
-
-## Project structure
+## Build
 
 ```
-├── src/
-│   ├── components/        # Header, Hero, DeviceMockup, section components…
-│   │   └── screens/       # The 4 screen templates + shared color logic
-│   ├── context/            # Variant (mono/tri-color) React context
-│   ├── hooks/               # useCountdown, useReducedMotion, useVariant
-│   └── data/                 # Screen template copy
-├── public/assets/          # Product photo, favicon
-└── screenshots/            # Submission screenshots (01–05)
+npm run build
+npm run preview
 ```
-
-I kept the Vite app at the repo root (rather than nested under `work/`) so
-it deploys directly on Vercel/Netlify with zero config — flagging this as a
-deliberate deviation from the suggested repo layout.
 
 ## Live demo
 
-[add your deployed URL here]
+[URL]
 
-Deploying takes about a minute:
-1. Push this repo to GitHub (see below).
-2. Go to [vercel.com/new](https://vercel.com/new) (or [app.netlify.com](https://app.netlify.com)), import the repo. Framework preset: **Vite**. No env vars needed.
-3. Deploy, then paste the resulting URL above.
+## Screenshots
 
-## Publishing to GitHub
+- `screenshots/01.png` — Hero
+- `screenshots/02.png` — Interactive screen showcase
+- `screenshots/03.png` — Variant toggle / alternate screen state
+- `screenshots/04.png` — Product & product information section
+- `screenshots/05.png` — Mobile view
 
-```bash
-cd async-labs-frontend
-git remote add origin https://github.com/<you>/async-labs-screening-<YourName>.git
-git branch -M main
-git push -u origin main
-```
-(A first commit is already made locally — see `git log`.)
+## Notes
 
-## Accessibility & responsiveness notes
+This is a frontend concept created for the Async Labs T5 screening task.
+No backend is required; the email form validates client-side only and
+does not store or send data anywhere.
 
-- Verified with axe-core: 0 violations.
-- Keyboard: full tab order, visible focus rings, Escape closes the mobile
-  menu, arrow keys move between screen-template tabs.
-- Respects `prefers-reduced-motion` (disables the crossfade and timer
-  re-render pacing).
-- Tested at 320px through desktop widths; layouts recompose at the sm/lg
-  breakpoints rather than just shrinking.
+## Time spent
 
-## What's left / what I'd do next
-
-- The waitlist form validates client-side only (no backend) — noted in the
-  UI copy rather than hidden.
-- Only one real product photo was available, so the tri-color variant is
-  represented on-screen (via the mockup's live color palette) rather than
-  with a second physical photo.
-- Next: swap the placeholder companion-app screenshots in "How it works"
-  for real UI, and add a dark-mode pass for the marketing site itself.
-
-## Tools used
-
-React, TypeScript, Vite, Tailwind CSS v4, oxlint, axe-core (manual
-accessibility check), Playwright (manual visual/interaction QA during
-development, not included as a test suite).
+[fill this in honestly]

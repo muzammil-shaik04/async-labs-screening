@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 @theme {
-  /* ---- Color: warm graphite + stone paper + e-ink signal accents ---- */
+  /* ---- Color: warm graphite + stone paper + restrained signal accents ---- */
   --color-ink: #171712;
   --color-ink-soft: #55534a;
   --color-ink-faint: #8a877a;

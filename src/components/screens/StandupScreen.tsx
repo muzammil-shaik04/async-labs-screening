@@ -28,7 +28,7 @@ export function StandupScreen({ variant }: { variant: Variant }) {
       </div>
 
       <div className="flex items-center justify-between text-[3.2cqw]" style={{ color: "var(--color-ink-soft)" }}>
-        <span>Next: 1:1 with Priya</span>
+        <span>Next: Team sync</span>
         <span>3:30 PM</span>
       </div>
     </div>

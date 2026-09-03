@@ -2,7 +2,9 @@ import { VariantProvider } from "./context/VariantContext";
 import { Header } from "./components/Header";
 import { Hero } from "./components/Hero";
 import { ValueStrip } from "./components/ValueStrip";
+import { WhyAttend } from "./components/WhyAttend";
 import { ScreensShowcase } from "./components/ScreensShowcase";
+import { UseCases } from "./components/UseCases";
 import { HowItWorks } from "./components/HowItWorks";
 import { Specs } from "./components/Specs";
 import { WaitlistCTA } from "./components/WaitlistCTA";
@@ -21,7 +23,9 @@ function App() {
       <main>
         <Hero />
         <ValueStrip />
+        <WhyAttend />
         <ScreensShowcase />
+        <UseCases />
         <HowItWorks />
         <Specs />
         <WaitlistCTA />

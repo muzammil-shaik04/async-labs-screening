@@ -14,7 +14,7 @@ export function DashboardScreen({ variant }: { variant: Variant }) {
     <div className="@container flex h-full flex-col justify-between font-mono">
       <div className="flex items-center justify-between">
         <span className="text-[3.2cqw] tracking-wide" style={{ color: "var(--color-ink-soft)" }}>
-          MAIN BRANCH
+          MAIN BRANCH · SAMPLE
         </span>
         <span
           className="rounded-sm px-[1.5cqw] py-[0.8cqw] text-[3.2cqw] font-medium"

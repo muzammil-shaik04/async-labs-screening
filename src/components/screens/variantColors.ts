@@ -8,7 +8,7 @@ export interface ScreenPalette {
 }
 
 /**
- * Maps the physical display variant to the colors its e-ink surface can
+ * Maps the physical display variant to the colors that variant's panel can
  * actually produce: the mono unit renders highlights in ink only, the
  * tri-color unit adds red and amber. Keeping this in one place means the
  * device mockup never shows a color the real hardware couldn't.

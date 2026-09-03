@@ -25,11 +25,11 @@ export function ScreensShowcase() {
     <section id="screens" className="container-page py-16 sm:py-24">
       <div className="mb-10 max-w-xl sm:mb-14">
         <h2 className="text-2xl font-semibold sm:text-3xl" style={{ color: "var(--color-ink)" }}>
-          One display, whatever the day calls for
+          One display. Whatever your workday calls for.
         </h2>
         <p className="mt-3 text-base leading-relaxed" style={{ color: "var(--color-ink-soft)" }}>
-          Switch templates from the companion app in seconds. Here's what
-          four of them look like on the actual screen.
+          Choose what deserves a glance. Switch between layouts to see how
+          Attend can fit different moments of the workday.
         </p>
       </div>
 

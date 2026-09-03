@@ -5,26 +5,64 @@ interface MobileNavProps {
   open: boolean;
   onClose: () => void;
   links: { href: string; label: string }[];
+  triggerRef: React.RefObject<HTMLButtonElement | null>;
 }
 
-export function MobileNav({ open, onClose, links }: MobileNavProps) {
+const FOCUSABLE_SELECTOR = 'a[href], button:not([disabled])';
+
+export function MobileNav({ open, onClose, links, triggerRef }: MobileNavProps) {
   const panelRef = useRef<HTMLDivElement>(null);
   const firstLinkRef = useRef<HTMLAnchorElement>(null);
+  const wasOpenRef = useRef(false);
+
+  // Open: move focus in and lock scroll. Close: return focus to the trigger.
+  useEffect(() => {
+    if (open) {
+      wasOpenRef.current = true;
+      firstLinkRef.current?.focus();
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+      if (wasOpenRef.current) {
+        wasOpenRef.current = false;
+        triggerRef.current?.focus();
+      }
+    }
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [open, triggerRef]);
 
   useEffect(() => {
     if (!open) return;
 
-    const onKeyDown = (e: KeyboardEvent) => {
-      if (e.key === "Escape") onClose();
-    };
-    document.addEventListener("keydown", onKeyDown);
-    firstLinkRef.current?.focus();
-    document.body.style.overflow = "hidden";
+    function onKeyDown(e: KeyboardEvent) {
+      if (e.key === "Escape") {
+        onClose();
+        return;
+      }
 
-    return () => {
-      document.removeEventListener("keydown", onKeyDown);
-      document.body.style.overflow = "";
-    };
+      if (e.key !== "Tab" || !panelRef.current) return;
+
+      const focusable = Array.from(
+        panelRef.current.querySelectorAll<HTMLElement>(FOCUSABLE_SELECTOR),
+      );
+      if (focusable.length === 0) return;
+
+      const first = focusable[0];
+      const last = focusable[focusable.length - 1];
+
+      if (e.shiftKey && document.activeElement === first) {
+        e.preventDefault();
+        last.focus();
+      } else if (!e.shiftKey && document.activeElement === last) {
+        e.preventDefault();
+        first.focus();
+      }
+    }
+
+    document.addEventListener("keydown", onKeyDown);
+    return () => document.removeEventListener("keydown", onKeyDown);
   }, [open, onClose]);
 
   if (!open) return null;
@@ -46,7 +84,7 @@ export function MobileNav({ open, onClose, links }: MobileNavProps) {
         style={{ background: "var(--color-paper)" }}
       >
         <div className="mb-6 flex items-center justify-between">
-          <span className="font-display text-sm font-semibold" style={{ fontFamily: "var(--font-display)" }}>
+          <span className="text-sm font-semibold" style={{ fontFamily: "var(--font-display)" }}>
             Menu
           </span>
           <button

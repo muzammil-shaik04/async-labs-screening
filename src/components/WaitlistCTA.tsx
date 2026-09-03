@@ -1,5 +1,7 @@
 import { useState, type FormEvent } from "react";
 
+const EMAIL_PATTERN = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
 export function WaitlistCTA() {
   const [email, setEmail] = useState("");
   const [error, setError] = useState<string | null>(null);
@@ -7,7 +9,8 @@ export function WaitlistCTA() {
 
   function handleSubmit(e: FormEvent) {
     e.preventDefault();
-    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+    const trimmed = email.trim();
+    if (!EMAIL_PATTERN.test(trimmed)) {
       setError("Enter a valid email address.");
       return;
     }
@@ -23,10 +26,10 @@ export function WaitlistCTA() {
           style={{ background: "var(--color-ink)" }}
         >
           <h2 className="text-2xl font-semibold sm:text-3xl" style={{ color: "var(--color-paper)" }}>
-            Be first to know when Attend ships
+            Interested in what comes next?
           </h2>
           <p className="mx-auto mt-3 max-w-sm text-sm sm:text-base" style={{ color: "var(--color-paper-deep)" }}>
-            No spam, one email when pre-orders open.
+            Leave your email to hear more about the Attend concept.
           </p>
 
           {submitted ? (
@@ -35,7 +38,7 @@ export function WaitlistCTA() {
               className="mx-auto mt-8 max-w-sm rounded-full px-5 py-3 text-sm font-medium"
               style={{ background: "var(--color-paper)", color: "var(--color-ink)" }}
             >
-              You're on the list — thanks for the interest.
+              Thanks — you're on the list.
             </p>
           ) : (
             <form
@@ -69,10 +72,14 @@ export function WaitlistCTA() {
                 className="shrink-0 rounded-full px-6 py-3 text-sm font-medium transition-transform hover:-translate-y-0.5 sm:text-base"
                 style={{ background: "var(--color-signal-red)", color: "var(--color-paper)" }}
               >
-                Join the list
+                Stay updated
               </button>
             </form>
           )}
+
+          <p className="mx-auto mt-4 max-w-sm text-xs" style={{ color: "var(--color-paper-deep)" }}>
+            No spam. Just occasional updates about the concept.
+          </p>
         </div>
       </div>
     </section>
