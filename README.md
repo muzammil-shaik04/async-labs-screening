@@ -1,6 +1,6 @@
 # Attend — Async Labs Frontend Screening
 
-**Name:** [Your Name]
+**Name:** U Muhammed Muzammil Shaik
 
 ## What I built
 
@@ -24,7 +24,7 @@ frame, in either the black & white or tri-color variant.
 - Interactive display templates (accessible tabs, keyboard-navigable)
 - Black & white / tri-color display variant toggle
 - Functional focus countdown timer
-- Responsive mobile navigation with focus trap and return-to-trigger
+- Responsive mobile navigation with focus trap and focus restoration
 - Accessible keyboard interactions throughout, 0 axe-core violations
 
 ## Tech
@@ -47,7 +47,7 @@ npm run preview
 
 ## Live demo
 
-[URL]
+https://async-labs-screening-delta.vercel.app/
 
 ## Screenshots
 
@@ -65,4 +65,4 @@ does not store or send data anywhere.
 
 ## Time spent
 
-[fill this in honestly]
+7 hours
