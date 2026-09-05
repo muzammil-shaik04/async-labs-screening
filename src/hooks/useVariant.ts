@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { VariantContext } from "../context/VariantContext";
+import { VariantContext } from "../context/variantContextValue";
 
 export function useVariant() {
   const ctx = useContext(VariantContext);

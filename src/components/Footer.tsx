@@ -9,7 +9,7 @@ export function Footer() {
             style={{ background: "var(--color-ink)" }}
           />
           <span className="text-sm font-medium" style={{ color: "var(--color-ink)" }}>
-            Attend by Async Labs
+            Attend — Async Labs screening concept
           </span>
         </div>
 

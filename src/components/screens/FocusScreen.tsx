@@ -1,11 +1,12 @@
 import { useCountdown } from "../../hooks/useCountdown";
-import { useReducedMotion } from "../../hooks/useReducedMotion";
 import type { Variant } from "../../types";
 import { getScreenPalette } from "./variantColors";
 
 export function FocusScreen({ variant }: { variant: Variant }) {
-  const reducedMotion = useReducedMotion();
-  const time = useCountdown(25 * 60, reducedMotion);
+  // The countdown always runs — prefers-reduced-motion should only affect
+  // visual animation (handled globally for the screen-switch transition),
+  // never the display's actual functionality.
+  const time = useCountdown(25 * 60);
   const palette = getScreenPalette(variant);
 
   return (

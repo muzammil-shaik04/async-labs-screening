@@ -49,7 +49,7 @@ export function DashboardScreen({ variant }: { variant: Variant }) {
             <span style={{ color: "var(--color-ink)" }}>{p.repo}</span>
             <span
               style={{
-                color: p.state === "warn" ? palette.amber : "var(--color-ink-soft)",
+                color: p.state === "warn" ? palette.accent : "var(--color-ink-soft)",
               }}
             >
               {p.label}

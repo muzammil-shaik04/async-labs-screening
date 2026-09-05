@@ -27,7 +27,7 @@ export function CalendarScreen({ variant }: { variant: Variant }) {
         </div>
         <span
           className="w-fit rounded-sm px-[1.5cqw] py-[0.8cqw] text-[2.8cqw] font-medium"
-          style={{ background: palette.amberSoft, color: "var(--color-ink)" }}
+          style={{ background: palette.accentSoft, color: "var(--color-ink)" }}
         >
           4 EVENTS
         </span>

@@ -41,7 +41,7 @@ export function Specs() {
         <figure>
           <div className="overflow-hidden rounded-xl">
             <img
-              src="/assets/product-desk.jpg"
+              src="/assets/product-desk.png"
               alt="Attend display standing on a desk on its kickstand, showing a blank screen, beside a plant and a coffee mug"
               className="h-full w-full object-cover"
               width={1007}

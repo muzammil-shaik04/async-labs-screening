@@ -15,7 +15,7 @@ export function VariantToggle({ className = "" }: { className?: string }) {
 
   return (
     <div
-      role="radiogroup"
+      role="group"
       aria-label="Display variant"
       className={`inline-flex items-center gap-1 rounded-full border p-1 ${className}`}
       style={{ borderColor: "var(--color-line)" }}
@@ -26,8 +26,7 @@ export function VariantToggle({ className = "" }: { className?: string }) {
           <button
             key={opt.id}
             type="button"
-            role="radio"
-            aria-checked={active}
+            aria-pressed={active}
             onClick={() => setVariant(opt.id)}
             className={`flex items-center gap-2 rounded-full px-3 py-1.5 text-xs font-medium transition-colors sm:text-sm ${
               active ? "text-[color:var(--color-paper)]" : "text-[color:var(--color-ink-soft)] hover:text-[color:var(--color-ink)]"
